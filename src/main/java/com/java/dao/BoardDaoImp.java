@@ -21,5 +21,9 @@ public class BoardDaoImp implements BoardDao{
 	public BoardDTO detail(BoardDTO boardDTO) {
 		return boardMapper.detail(boardDTO);
 	}
+	@Override
+	public int edit(BoardDTO boardDTO) {
+		return boardMapper.edit(boardDTO);
+	}
 
 }

@@ -8,4 +8,6 @@ public interface BoardDao {
 	List<BoardDTO> boardlist(String accept);
 
 	BoardDTO detail(BoardDTO boardDTO);
+
+	int edit(BoardDTO boardDTO);
 }

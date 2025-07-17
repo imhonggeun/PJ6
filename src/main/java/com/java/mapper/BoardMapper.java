@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.java.dto.BoardDTO;
 
@@ -19,5 +20,8 @@ public interface BoardMapper {
 
 	@Select("select title,content from test where no=#{no}")
 	BoardDTO detail(BoardDTO boardDTO);
+
+	@Update("update test set title=#{title},content=#{content} where no=#{no}")
+	int edit(BoardDTO boardDTO);
 
 }

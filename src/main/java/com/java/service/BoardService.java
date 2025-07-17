@@ -10,4 +10,6 @@ public interface BoardService {
 
 	String detail(Model model, HttpServletRequest req);
 
+	String edit(HttpServletRequest req);
+
 }

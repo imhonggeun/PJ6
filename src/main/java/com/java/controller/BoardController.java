@@ -3,6 +3,7 @@ package com.java.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.java.service.BoardService;
 
@@ -23,6 +24,10 @@ public class BoardController {
 	@GetMapping("/detail")
 	public String detail(Model model,HttpServletRequest req) {
 		return boardService.detail(model,req);
+	}
+	@PostMapping("/edit")
+	public String edit(HttpServletRequest req) {
+		return boardService.edit(req);
 	}
 
 }
