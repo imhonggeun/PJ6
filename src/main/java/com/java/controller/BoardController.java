@@ -29,5 +29,13 @@ public class BoardController {
 	public String edit(HttpServletRequest req) {
 		return boardService.edit(req);
 	}
+	@GetMapping("/input")
+	public String input() {
+		return "input";
+	}
+	@PostMapping("/input")
+	public String input(HttpServletRequest req) {
+		return boardService.input(req);
+	}
 
 }

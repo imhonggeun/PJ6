@@ -2,6 +2,7 @@ package com.java.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -23,5 +24,9 @@ public interface BoardMapper {
 
 	@Update("update test set title=#{title},content=#{content} where no=#{no}")
 	int edit(BoardDTO boardDTO);
+	
+	
+	@Insert("insert into test (title,content) values (#{title},#{content})")
+	int input(BoardDTO boardDTO);
 
 }

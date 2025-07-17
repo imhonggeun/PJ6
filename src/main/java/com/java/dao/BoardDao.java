@@ -10,4 +10,6 @@ public interface BoardDao {
 	BoardDTO detail(BoardDTO boardDTO);
 
 	int edit(BoardDTO boardDTO);
+
+	int input(BoardDTO boardDTO);
 }

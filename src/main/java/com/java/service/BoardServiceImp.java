@@ -50,4 +50,14 @@ public class BoardServiceImp implements BoardService{
 		return "redirect:/";
 	}
 
+
+	@Override
+	public String input(HttpServletRequest req) {
+		String title = req.getParameter("title");
+		String content = req.getParameter("content");
+		BoardDTO boardDTO =BoardDTO.builder().title(title).content(content).build();
+		boardDao.input(boardDTO);
+		return "redirect:/";
+	}
+
 }
