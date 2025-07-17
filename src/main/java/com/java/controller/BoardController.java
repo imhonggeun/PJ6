@@ -37,5 +37,9 @@ public class BoardController {
 	public String input(HttpServletRequest req) {
 		return boardService.input(req);
 	}
+	@GetMapping("/accept")
+	public String accept(HttpServletRequest req) {
+		return boardService.accept(req);
+	}
 
 }

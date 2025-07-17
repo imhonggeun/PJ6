@@ -31,10 +31,7 @@ public class BoardServiceImp implements BoardService{
 	@Override
 	public String detail(Model model, HttpServletRequest req) {
 		int no = Integer.parseInt(req.getParameter("no"));
-		String title = req.getParameter("title");
-		String content = req.getParameter("content");
-		BoardDTO boardDTO = BoardDTO.builder().no(no).title(title).content(content).build();
-		boardDao.detail(boardDTO);
+		BoardDTO boardDTO = boardDao.detail(no);
 		model.addAttribute("result",boardDTO);
 		return "detail";
 	}
@@ -57,6 +54,16 @@ public class BoardServiceImp implements BoardService{
 		String content = req.getParameter("content");
 		BoardDTO boardDTO =BoardDTO.builder().title(title).content(content).build();
 		boardDao.input(boardDTO);
+		return "redirect:/";
+	}
+
+
+	@Override
+	public String accept(HttpServletRequest req) {
+		int no = Integer.parseInt(req.getParameter("no"));
+		boolean accept = (req.getParameter("accept").equals("0")) ? true : false;
+		BoardDTO boardDTO = BoardDTO.builder().no(no).accept(accept).build();
+		boardDao.accept(boardDTO);
 		return "redirect:/";
 	}
 

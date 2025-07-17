@@ -7,9 +7,11 @@ import com.java.dto.BoardDTO;
 public interface BoardDao {
 	List<BoardDTO> boardlist(String accept);
 
-	BoardDTO detail(BoardDTO boardDTO);
+	BoardDTO detail(int no);
 
 	int edit(BoardDTO boardDTO);
 
 	int input(BoardDTO boardDTO);
+
+	int accept(BoardDTO boardDTO);
 }

@@ -19,8 +19,8 @@ public interface BoardMapper {
 			+ "</script>"})
 	List<BoardDTO> boardlist(String accept);
 
-	@Select("select title,content from test where no=#{no}")
-	BoardDTO detail(BoardDTO boardDTO);
+	@Select("select * from test where no=#{no}")
+	BoardDTO detail(int no);
 
 	@Update("update test set title=#{title},content=#{content} where no=#{no}")
 	int edit(BoardDTO boardDTO);
@@ -28,5 +28,8 @@ public interface BoardMapper {
 	
 	@Insert("insert into test (title,content) values (#{title},#{content})")
 	int input(BoardDTO boardDTO);
+	
+	@Update("update test set accept=#{accept} where no=#{no}")
+	int accept(BoardDTO boardDTO);
 
 }

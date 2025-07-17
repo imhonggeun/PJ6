@@ -14,4 +14,6 @@ public interface BoardService {
 
 	String input(HttpServletRequest req);
 
+	String accept(HttpServletRequest req);
+
 }

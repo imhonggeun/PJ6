@@ -18,8 +18,8 @@ public class BoardDaoImp implements BoardDao{
 		return boardMapper.boardlist(accept);
 	}
 	@Override
-	public BoardDTO detail(BoardDTO boardDTO) {
-		return boardMapper.detail(boardDTO);
+	public BoardDTO detail(int no) {
+		return boardMapper.detail(no);
 	}
 	@Override
 	public int edit(BoardDTO boardDTO) {
@@ -28,6 +28,10 @@ public class BoardDaoImp implements BoardDao{
 	@Override
 	public int input(BoardDTO boardDTO) {
 		return boardMapper.input(boardDTO);
+	}
+	@Override
+	public int accept(BoardDTO boardDTO) {
+		return boardMapper.accept(boardDTO);
 	}
 
 }
