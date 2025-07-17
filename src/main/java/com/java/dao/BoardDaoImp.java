@@ -17,5 +17,9 @@ public class BoardDaoImp implements BoardDao{
 	public List<BoardDTO> boardlist(String accept) {
 		return boardMapper.boardlist(accept);
 	}
+	@Override
+	public BoardDTO detail(BoardDTO boardDTO) {
+		return boardMapper.detail(boardDTO);
+	}
 
 }

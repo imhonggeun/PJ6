@@ -15,9 +15,14 @@ public class BoardController {
 	
 	private final BoardService boardService;
 	
-	@GetMapping
+	@GetMapping("/")
 	public String boardlist(Model model, HttpServletRequest req) {
 		return boardService.boardlist(model,req);
+	}
+	
+	@GetMapping("/detail")
+	public String detail(Model model,HttpServletRequest req) {
+		return boardService.detail(model,req);
 	}
 
 }

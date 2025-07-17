@@ -27,4 +27,16 @@ public class BoardServiceImp implements BoardService{
 		return "list";
 	}
 
+
+	@Override
+	public String detail(Model model, HttpServletRequest req) {
+		int no = Integer.parseInt(req.getParameter("no"));
+		String title = req.getParameter("title");
+		String content = req.getParameter("content");
+		BoardDTO boardDTO = BoardDTO.builder().no(no).title(title).content(content).build();
+		baordDao.detail(boardDTO);
+		model.addAttribute("result",boardDTO);
+		return "detail";
+	}
+
 }

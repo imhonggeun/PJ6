@@ -17,4 +17,7 @@ public interface BoardMapper {
 			+ "</script>"})
 	List<BoardDTO> boardlist(String accept);
 
+	@Select("select title,content from test where no=#{no}")
+	BoardDTO detail(BoardDTO boardDTO);
+
 }

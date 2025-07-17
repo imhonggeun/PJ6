@@ -6,4 +6,6 @@ import com.java.dto.BoardDTO;
 
 public interface BoardDao {
 	List<BoardDTO> boardlist(String accept);
+
+	BoardDTO detail(BoardDTO boardDTO);
 }

@@ -8,4 +8,6 @@ public interface BoardService {
 
 	String boardlist(Model model, HttpServletRequest req);
 
+	String detail(Model model, HttpServletRequest req);
+
 }
